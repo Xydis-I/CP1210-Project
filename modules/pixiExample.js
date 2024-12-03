@@ -14,6 +14,17 @@
         cave.x = app.screen.width / 2;
         cave.y = app.screen.height / 2;
 
+    const textBox = new PIXI.Graphics();
+    textBox.rect(app.screen.width / 6, 50, 800, 200);
+    textBox.fill("#3477b3");
+    app.stage.addChild(textBox);
+
+    const bookBox = new PIXI.Graphics();
+    bookBox.rect(app.screen.width / 6, 650, 800, 200);
+    bookBox.fill("#3477b3");
+    app.stage.addChild(bookBox);
+
+
     await PIXI.Assets.load('sprites/FinishSprites/BatEyeEnemy.png');
         const bat = PIXI.Sprite.from('sprites/FinishSprites/BatEyeEnemy.png');
         app.stage.addChild(bat);
