@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trivia Dungeon</title>
-    <link rel="icon" href="./sprites/FinishSprites/BatEyeEnemy.png">
-    <link rel="stylesheet" href="./stylesheets/index.css">
+    <link rel="icon" href="../sprites/FinishSprites/BatEyeEnemy.png">
+    <link rel="stylesheet" href="./stylesheets/frontpage.css">
 </head>
 <body>
+    <!-- Index is now just the main page and will have a button to start the game. -matt -->
     <main>
         <h1>Trivia Dungeon</h1>
-        <!-- TODO: Make a nice main page. -->
-        <div id="gameBox"></div>
-        <!-- https://pixijs.com/8.x/guides/basics/getting-started -->
-        <script type="module"  src="modules/pixiExample.js">
-        // Pulled the script out into a test file just testing how the stand alone function syntax works (Matt)  
-        </script>
+        <div id="Buttons">
+            <button id="start" onclick={startGame()}>Start</button>
+        </div>
     </main>
-    <script src="libraries/pixi.js"></script>   
+    <script>
+        const startGame = () => {
+        location.replace(location.pathname = './Screens/gamePage.html');
+        }
+    </script>   
 </body>
 </html>

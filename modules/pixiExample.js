@@ -6,8 +6,8 @@
     document.getElementById("gameBox").appendChild(app.canvas);
 
     // load the PNG asynchronously
-    await PIXI.Assets.load('sprites/FinishSprites/pixel-art-dungeon-.jpg');
-        let cave = PIXI.Sprite.from('sprites/FinishSprites/pixel-art-dungeon-.jpg');
+    await PIXI.Assets.load('../sprites/FinishSprites/pixel-art-dungeon-.jpg');
+        let cave = PIXI.Sprite.from('../sprites/FinishSprites/pixel-art-dungeon-.jpg');
         app.stage.addChild(cave);
         // center the sprite when it loads. also anchor fixes where to center of the sprites is
         cave.anchor.set(0.5);
@@ -25,8 +25,8 @@
     app.stage.addChild(bookBox);
 
 
-    await PIXI.Assets.load('sprites/FinishSprites/BatEyeEnemy.png');
-        const bat = PIXI.Sprite.from('sprites/FinishSprites/BatEyeEnemy.png');
+    await PIXI.Assets.load('../sprites/FinishSprites/BatEyeEnemy.png');
+        const bat = PIXI.Sprite.from('../sprites/FinishSprites/BatEyeEnemy.png');
         app.stage.addChild(bat);
         //center bat on load and fixes sprite center with anchor.
         bat.anchor.set(0.5);
