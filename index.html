@@ -12,12 +12,12 @@
     <main>
         <h1>Trivia Dungeon</h1>
         <div id="buttons">
-            <button class="start" role="button" onclick={startGame()}>Start</button>
+            <button id="start" role="button" onclick={gameMenu()}>Start</button>
         </div>
     </main>
     <script>
-        const startGame = () => {
-        location.replace(location.pathname = './Screens/gamePage.html');
+        const gameMenu = () => {
+        location.replace(location.pathname = './Screens/MenuPage.html');
         }
     </script>   
 </body>

@@ -16,7 +16,7 @@ body {
     text-align: center;
 }
 
-.start  {
+#start  {
   --c: #fff;
   /* text color */
   background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
@@ -31,20 +31,20 @@ body {
   transition: 0.3s;
 }
 
-.start:hover,
-.start:focus-visible {
+#start:hover,
+#start:focus-visible {
   --_p: 0%;
   --_i: 1;
 }
 
-.start:active {
+#start:active {
   text-shadow: none;
   color: var(--c);
   box-shadow: inset 0 0 9e9q #0005;
   transition: 0s;
 }
 
-.start  {
+#start  {
   width: 400px;
   height: 100px;  
   font-weight: bold;

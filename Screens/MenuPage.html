@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia Dungeon</title>
+    <link rel="icon" href="../sprites/FinishSprites/BatEyeEnemy.png">
+    <link rel="stylesheet" href="../stylesheets/menuPage.css">
+</head>
+<body>
+    <!-- Game page will holds all the rending for the game win one div with nothing else but that in the html. -matt -->
+    <main>
+        <div id="menu">
+            <h1>Main Menu</h1>
+            <h2>Welcome To Trivia Dungeon!</h2>
+            <p>In Trivia dungeon the player takes the position of a adventurer well versed in the art word smithing.</br>
+               The player will have to used the Knowledge That they have gained over the years from playing games</br>
+               to smite the enemies that block their escape from the Trivia Dungeon!
+            </p>
+
+            <button id="start" onclick={startGame()}>Start the game!</button>
+            <h2>Settings</h2>
+            <div id="settings">
+                <p> random filler will add settings later</p>
+            </div>
+            <h2>Github</h2>
+            <a href="https://github.com/Xydis-I/CP1210-Project">Project Repository</a>
+        </div>
+    </main>
+    <script>
+        const startGame = () => {
+        location.replace(location.pathname = './gamePage.html');
+        }
+    </script> 
+</body>
+</html>
