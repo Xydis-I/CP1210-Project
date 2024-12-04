@@ -14,3 +14,19 @@ body {
     min-height: 900px;
     min-width: 800px;
 }
+
+#win {
+    color: green;
+}
+
+#lose {
+    color: red;
+}
+
+#return {
+    width: 290px;
+    height: 50px;
+    color: white;
+    background-color: #095f15;
+    font-size: x-large;
+}

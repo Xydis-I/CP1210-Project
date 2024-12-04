@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trivia Dungeon</title>
-    <link rel="icon" href="./sprites/FinishSprites/BatEyeEnemy.png">
+    <link rel="icon" href="../sprites/FinishSprites/BatEyeEnemy.png">
     <link rel="stylesheet" href="../stylesheets/gameOutcome.css">
 </head>
 <body>
     <main>
-      <h1>Win</h1>
+      <div id="box">
+        <h1 id="win">You Win!</h1>
+        <p>Congratulation! You have successfully escape the Trivia Dungeon!</p>
+        <h2>Stats</h2>
+        <div id="stats">
+          random stuff
+        </div>
+        <button id="return" onclick={returnTitle()}>Return To Title Screens</button>
+      </div>
     </main>
-    <script src="../libraries/pixi.js"></script>   
+    <script>
+      const returnTitle = () => {
+        location.replace(location.pathname = '../index.html');
+        }
+    </script>   
 </body>
 </html>
