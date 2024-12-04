@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Jacquard 12", system-ui;
+    src: url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+  }
+  
 body {
     text-align: center;
     background-image:url("../sprites/FinishSprites/mossBackground.jpg");
@@ -27,6 +32,7 @@ body {
     width: 290px;
     height: 50px;
     color: white;
+    font-family: "Jacquard 12", system-ui;
     background-color: #095f15;
     font-size: x-large;
 }
