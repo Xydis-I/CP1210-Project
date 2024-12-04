@@ -11,9 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio autoplay loop> 
-        <source src="../Audio/8-bit-dungeon-251388.mp3" type="audio/mp3">
-    </audio>
+    
     <!-- Game page will holds all the rending for the game win one div with nothing else but that in the html. -matt -->
     <main>
         <div id="menu">
@@ -27,7 +25,9 @@
             <button id="start" onclick={startGame()}>Start the game!</button>
             <h2>Settings</h2>
             <div id="settings">
-                <p> random filler will add settings later</p>
+                <audio autoplay loop controls> 
+                    <source src="../Audio/8-bit-dungeon-251388.mp3" type="audio/mp3">
+                </audio>
             </div>
             <h2>Github</h2>
             <a href="https://github.com/Xydis-I/CP1210-Project">Project Repository</a>

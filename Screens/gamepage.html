@@ -6,13 +6,16 @@
     <title>Trivia Dungeon</title>
     <link rel="icon" href="../sprites/FinishSprites/BatEyeEnemy.png">
     <link rel="stylesheet" href="../stylesheets/gamePage.css">
+    <audio autoplay loop> 
+        <source src="../Audio/gameAudio.mp3" type="audio/mp3">
+    </audio>
 </head>
 <body>
     <!-- Game page will holds all the rending for the game win one div with nothing else but that in the html. -matt -->
     <main>
         <div id="gameBox"></div>
         <!-- https://pixijs.com/8.x/guides/basics/getting-started -->
-        <script type="module"  src="../modules/pixiExample.js">
+        <script type="module"  src="../modules/game.js">
         // Pulled the script out into a test file just testing how the stand alone function syntax works (Matt)  
         </script>
     </main>

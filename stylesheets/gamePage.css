@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image:url("../sprites/FinishSprites/mossBackground.jpg");
+    background-image:url("../sprites/backgrounds/mossBackground.jpg");
 }
 
 main {
@@ -21,7 +21,7 @@ main {
     border: 5px;
     border-color: #6b5420;
     border-style: solid;
-    background-color: #6b5420;
+    background-color: wheat;
 }
 
 canvas {
