@@ -136,14 +136,7 @@
             answer1.style = defaultStyle;
             answer1.scale = 1;
         });
-        answer1.on('click', () => {
-            if (answer1.text == questions[questionNumber].correct) {
-                console.log("correct")
-            }
-            if (answer1.text != questions[questionNumber].correct) {
-                console.log("incorrect")
-            }
-        });
+        answer1.on('click', () => {clickAnswer(answer1)});
 
         const answer2 = new PIXI.Text({ text: 'Answer2', style: defaultStyle });
         answer2.anchor.set(0.5);
@@ -165,14 +158,7 @@
             answer2.scale = 1;
 
         });
-        answer2.on('click', () => {
-            if (answer2.text == questions[questionNumber].correct) {
-                console.log("correct")
-            }
-            if (answer2.text != questions[questionNumber].correct) {
-                console.log("incorrect")
-            }
-        });
+        answer2.on('click', () => {clickAnswer(answer2)});
 
         const answer3 = new PIXI.Text({ text: 'Answer3', style: defaultStyle });
         answer3.anchor.set(0.5);
@@ -192,14 +178,7 @@
             answer3.style = defaultStyle;
             answer3.scale = 1;
         });
-        answer3.on('click', () => {
-            if (answer3.text == questions[questionNumber].correct) {
-                console.log("correct")
-            }
-            if (answer3.text != questions[questionNumber].correct) {
-                console.log("incorrect")
-            }
-        });
+        answer3.on('click', () => {clickAnswer(answer3)});
 
         const answer4 = new PIXI.Text({ text: 'Answer4', style: defaultStyle });
         answer4.anchor.set(0.5);
@@ -219,14 +198,7 @@
             answer4.style = defaultStyle;
             answer4.scale = 1;
         });
-        answer4.on('click', () => {
-            if (answer4.text == questions[questionNumber].correct) {
-                console.log("correct")
-            }
-            if (answer4.text != questions[questionNumber].correct) {
-                console.log("incorrect")
-            }
-        });
+        answer4.on('click', () => {clickAnswer(answer4)});
 
     await PIXI.Assets.load('../sprites/UI/LevelMap.png');
         const levelmap = PIXI.Sprite.from('../sprites/UI/LevelMap.png');
@@ -268,6 +240,15 @@
         }
     }
 
+    function clickAnswer(answer) {
+        if (answer.text == questions[questionNumber].correct) {
+            console.log("correct")
+        }
+        if (answer.text != questions[questionNumber].correct) {
+            console.log("incorrect")
+        }
+    }
+
     let elapsed = 0.0;
     app.ticker.add((ticker) => {
         elapsed += ticker.deltaTime;
@@ -286,6 +267,5 @@
         if (levelTime >= 0) {
             timer.text = Math.floor(levelTime);
         }
-
     });
 })();
