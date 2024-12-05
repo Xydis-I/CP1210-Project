@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
-    <audio autoplay loop> 
+    <audio loop> 
       <source src="../Audio/gameover.mp3" type="audio/mp3">
     </audio>
 </head>
@@ -29,6 +29,11 @@
       const returnTitle = () => {
         location.replace(location.pathname = '../index.html');
         }
+        document.addEventListener("DOMContentLoaded", () =>{
+            const $ = selector => document.querySelector(selector);
+            $("audio").volume = 0.05;
+            $("audio").play();
+        });
     </script>   
 </body>
 </html>

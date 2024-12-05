@@ -6,7 +6,7 @@
     <title>Trivia Dungeon</title>
     <link rel="icon" href="../sprites/FinishSprites/BatEyeEnemy.png">
     <link rel="stylesheet" href="../stylesheets/gamePage.css">
-    <audio autoplay loop> 
+    <audio loop> 
         <source src="../Audio/gameAudio.mp3" type="audio/mp3">
     </audio>
 </head>
@@ -19,6 +19,13 @@
         // Pulled the script out into a test file just testing how the stand alone function syntax works (Matt)  
         </script>
     </main>
-    <script src="../libraries/pixi.js"></script>   
+    <script src="../libraries/pixi.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            const $ = selector => document.querySelector(selector);
+            $("audio").volume = 0.05;
+            $("audio").play();
+        });
+    </script>
 </body>
 </html>

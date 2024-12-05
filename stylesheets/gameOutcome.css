@@ -13,11 +13,11 @@ body {
     border: 5px;
     border-color: #6b5420;
     border-style: solid;
-    margin-top: 50px;
-    margin-left: 500px;
-    margin-right: 500px;
-    min-height: 900px;
+    width: 70%;
+    min-height: 600px;
     min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #win {

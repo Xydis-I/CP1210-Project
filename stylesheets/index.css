@@ -3,23 +3,30 @@
   src: url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
 }
 
+main {
+  width: 70%;
+  min-height: 600px;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
-    text-align: center;
-    font-size: 200px;
-    font-family: "Jacquard 12", system-ui;
-    margin-top: 300px;
-    color: #37ff52;
+  text-align: center;
+  font-size: 150px;
+  font-family: "Jacquard 12", system-ui;
+  color: #37ff52;
 }
 
 body {
-    background-image:url('../sprites/backgrounds/DungeonBackground.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image:url('../sprites/backgrounds/DungeonBackground.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #buttons {
-    text-align: center;
+  text-align: center;
 }
 
 #start {
