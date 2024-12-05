@@ -31,7 +31,7 @@
         {question:"What game has a loonie tunes art style?", answer1: "Cuphead", answer2: "It takes Two", answer3: "Noita", answer4: "Pikmin"},
         {question:"what series does the Character 'Samus' come from?", answer1: "mass effect", answer2: "F-Zero", answer3: "Metroid", answer4: "StarFox"},
         {question:"Cloud is the main character of what Final fantasy?", answer1: "VIII(8)", answer2: "VII(7)", answer3: "X(10)", answer4: "VI(6)"},
-        {question:"In the Kirby series, what is kirbys bandana wearing friend?", answer1: "King Deedee", answer2: "MetaKnight", answer3: "Waddle Dee", answer4: "waddel doo"},
+        {question:"Who is kirbys bandana wearing friend?", answer1: "King Deedee", answer2: "MetaKnight", answer3: "Waddle Dee", answer4: "waddel doo"},
     ];    
 
     await PIXI.Assets.load("../Sprites/Backgrounds/Level1.png");
