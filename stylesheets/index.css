@@ -38,3 +38,7 @@ body {
   background-color: #095f15;
   border-color: #6b5420;
 }
+
+#start:hover {
+  background-color: #0c991f;
+}
