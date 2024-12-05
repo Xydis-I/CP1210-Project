@@ -6,20 +6,18 @@ body {
 main {
     text-align: center;
     width: 70%;
-    min-height: 600px;
-    min-width: 800px;
+    aspect-ratio: 1.56/1;
+    min-height: 540px;
+    min-width: 843px;
+    max-height: 1080px;
+    max-width: 1686px;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 #gameBox {
     text-align: center;
-    width: 70%;
-    min-height: 600px;
-    min-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    height: calc(100% - 7px);
     border: 5px;
     border-color: #6b5420;
     border-style: solid;
@@ -28,9 +26,10 @@ main {
 
 canvas {
     text-align: center;
-    width: 70%;
-    min-height: 600px;
-    min-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
+
+/* @font-face {
+    font-family: Daydream;
+    src: url(../Fonts/Daydream.ttf) format('ttf');
+} */
