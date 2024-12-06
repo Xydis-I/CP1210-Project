@@ -156,16 +156,91 @@
   background.height = app.screen.height;
 
   // Loads first enemy into default position.
-  const slimeDefaultLocation = { x: 935, y: 700 };
-
+  // added default positiions for all enemys.
+  // Level 1
+   const slimeDefaultLocation = { x: 935, y: 650, Health: -150};
+  const batDefaultLocation = {x:935, Y: 650, Health: -130};
+  // Level 2
+  const goblinDefaultLocation = {x:935, y: 650, Health: -260};
+  const skeletonDefaultLocation = {x:935, y: 650, Health: -270};
+  //Level 3
+  const basiliskDefaultLcation = {x:935, y: 650, Health: -180};
+  const ghostDefaultLocation = {x:935, y: 650, Health: -250};
+  // Level 4
+  const wizardDefaultLocation = {x: 935, y: 650, Health: -290};
+  const mimicDefaultLocation = {x:935, y: 650, Health: -250};
+  // Level 5
+  const mindFlayerDefaulaLocation = {x:935, y: 650, Health: -230};
+  const stoneGolemDefaultLocation = {x:935, y: 650, Health: -280};
+  
   let enemyHealthValue = 2;
+  let currentEnemy = "";
+  let enemyDefaultLocation = null;
 
-  await PIXI.Assets.load("../sprites/Enemies/PurpleSlime.png");
-  const enemy = PIXI.Sprite.from("../sprites/Enemies/PurpleSlime.png");
+  if (currentLevel == 1) {
+    let random = Math.floor(Math.random() * 2);
+    console.log("Enemy num", random);
+    if (random == 0) {
+        currentEnemy = "PurpleSlime";
+        enemyDefaultLocation = slimeDefaultLocation;
+    }
+    if (random == 1) {
+        currentEnemy = "BatEye";
+        enemyDefaultLocation = batDefaultLocation;
+    }
+  }
+  else if (currentLevel == 2) {
+    let random = Math.floor(Math.random() * 2);
+    if (random == 0) {
+        currentEnemy = "Goblin";
+        enemyDefaultLocation = goblinDefaultLocation;
+    }
+    if (random == 1) {
+        currentEnemy = "Skeleton";
+        enemyDefaultLocation = skeletonDefaultLocation;
+    }
+  }
+  else if (currentLevel == 3) {
+    let random = Math.floor(Math.random() * 2);
+    if (random == 0) {
+        currentEnemy = "Basilisk";
+        enemyDefaultLocation = basiliskDefaultLcation;
+    }
+    if (random == 1) {
+        currentEnemy = "Ghost";
+        enemyDefaultLocation = ghostDefaultLocation;
+    }
+  }
+  else if (currentLevel == 4) {
+    let random = Math.floor(Math.random() * 2);
+    if (random == 0) {
+        currentEnemy = "Mimic";
+        enemyDefaultLocation = mimicDefaultLocation;
+    }
+    if (random == 1) {
+        currentEnemy = "Wizard";
+        enemyDefaultLocation = wizardDefaultLocation;
+    }
+  }
+  else if (currentLevel == 5) {
+    let random = Math.floor(Math.random() * 2);
+    if (random == 0) {
+        currentEnemy = "MindFlayer";
+        enemyDefaultLocation = mindFlayerDefaulaLocation;
+    }
+    if (random == 1) {
+        currentEnemy = "StoneGolem";
+        enemyDefaultLocation = stoneGolemDefaultLocation;
+    }
+  }
+
+
+  await PIXI.Assets.load(`../sprites/Enemies/${currentEnemy}.png`);
+  const enemy = PIXI.Sprite.from(`../sprites/Enemies/${currentEnemy}.png`);
   app.stage.addChild(enemy);
   enemy.anchor.set(0.5);
-  enemy.x = slimeDefaultLocation["x"];
-  enemy.y = slimeDefaultLocation["y"];
+  enemy.x = enemyDefaultLocation["x"];
+  enemy.y = enemyDefaultLocation["y"];
 
   await PIXI.Assets.load("../sprites/UI/2hp.png");
   const enemyHealth = PIXI.Sprite.from("../sprites/UI/2hp.png");
@@ -173,7 +248,7 @@
   enemyHealth.anchor.set(0.5);
   enemyHealth.scale = 1.5;
   enemyHealth.x = 0;
-  enemyHealth.y = -130;
+  enemyHealth.y = enemyDefaultLocation["Health"];
 
   await PIXI.Assets.load("../sprites/UI/QuestionScroll.png");
   const scroll = PIXI.Sprite.from("../sprites/UI/QuestionScroll.png");
