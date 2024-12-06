@@ -1,0 +1,55 @@
+{"frames": {
+
+"GreenSpell28_0.png":
+{
+	"frame": {"x":0,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"GreenSpell28_1.png":
+{
+	"frame": {"x":32,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"GreenSpell28_2.png":
+{
+	"frame": {"x":64,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"GreenSpell28_3.png":
+{
+	"frame": {"x":96,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"GreenSpell28_4.png":
+{
+	"frame": {"x":128,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"animations": {
+	"GreenSpell28": ["GreenSpell28_0.png","GreenSpell28_1.png","GreenSpell28_2.png","GreenSpell28_3.png","GreenSpell28_4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "GreenSpell28.png",
+	"format": "RGBA8888",
+	"size": {"w":160,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5a2d6225077b77f47132f6a66d244117:47cc90508c70387fa9610bf08e4368fe:eba27b52ad0529d0dff06f3d5077f02d$"
+}
+}

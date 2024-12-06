@@ -1,0 +1,55 @@
+{"frames": {
+
+"PurpleSpell26_0.png":
+{
+	"frame": {"x":0,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"PurpleSpell26_1.png":
+{
+	"frame": {"x":32,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"PurpleSpell26_2.png":
+{
+	"frame": {"x":64,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"PurpleSpell26_3.png":
+{
+	"frame": {"x":96,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"PurpleSpell26_4.png":
+{
+	"frame": {"x":128,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"animations": {
+	"PurpleSpell26": ["PurpleSpell26_0.png","PurpleSpell26_1.png","PurpleSpell26_2.png","PurpleSpell26_3.png","PurpleSpell26_4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "PurpleSpell26.png",
+	"format": "RGBA8888",
+	"size": {"w":160,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:72f72976bde7301e0fc77afc5d3ca6ad:fef92f9462c3eba540de4d608cea91e8:921ec251fbd58516f3fa170b34bcd012$"
+}
+}

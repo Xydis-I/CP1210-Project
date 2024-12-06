@@ -1,0 +1,55 @@
+{"frames": {
+
+"OrangeSpell28_0.png":
+{
+	"frame": {"x":0,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"OrangeSpell28_1.png":
+{
+	"frame": {"x":32,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"OrangeSpell28_2.png":
+{
+	"frame": {"x":64,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"OrangeSpell28_3.png":
+{
+	"frame": {"x":96,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"OrangeSpell28_4.png":
+{
+	"frame": {"x":128,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"animations": {
+	"OrangeSpell28": ["OrangeSpell28_0.png","OrangeSpell28_1.png","OrangeSpell28_2.png","OrangeSpell28_3.png","OrangeSpell28_4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "OrangeSpell28.png",
+	"format": "RGBA8888",
+	"size": {"w":160,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4b65a12041d34fa7056c483a0c5715ff:84d6de243a89c23aefa5351b77815cc3:2296fa986f077f1aac6c83f7ea726ab2$"
+}
+}

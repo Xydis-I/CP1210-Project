@@ -65,12 +65,12 @@
       correct: "Portal",
     },
     {
-      question: "What W.O.W. characters title is 'Warchilf of the Horde?'",
+      question: "Who was the last 'Warchief of the Horde?'",
       answer1: "Thrall",
       answer2: "Rexxar",
-      answer3: "Illidan",
+      answer3: "Sylvanas",
       answer4: "BlackHand",
-      correct: "Thrall",
+      correct: "Sylvanas",
     },
     {
       question: "What game series are the 'Blades of chaos from?'",
@@ -133,7 +133,7 @@
       answer1: "King Deedee",
       answer2: "MetaKnight",
       answer3: "Waddle Dee",
-      answer4: "waddle doo",
+      answer4: "Waddle Doo",
       correct: "Waddle Dee",
     },
   ];
@@ -171,6 +171,31 @@
   enemyHealth.scale = 1.5;
   enemyHealth.x = 0;
   enemyHealth.y = -130;
+
+
+//   await PIXI.Assets.load('../sprites/Spells/Blue/BlueSpell01.json');
+//   // Create an array to store the textures
+//   const spellTextures = [];
+//   let i;
+
+//   for (i = 0; i < 5; i++)
+//   {
+//     const texture = PIXI.Texture.from(`BlueSpell01_${i}.png`);
+//     spellTextures.push(texture);
+//   }
+
+//   const spell = new PIXI.AnimatedSprite(spellTextures);
+//   spell.anchor.set(0.5);
+//   spell.x = 0;
+//   spell.y = 0;
+//   spell.scale = 7.5;
+//   spell.animationSpeed = 0.2;
+//   spell.loop = false;
+//   spell.play();
+//   spell.onComplete = () => {
+//     spell.destroy();
+//   };
+//   enemy.addChild(spell);
 
   await PIXI.Assets.load("../sprites/UI/QuestionScroll.png");
   const scroll = PIXI.Sprite.from("../sprites/UI/QuestionScroll.png");
@@ -233,8 +258,14 @@
   spellbook.x = 928;
   spellbook.y = 940;
 
-  const defaultHoverStyle = new PIXI.TextStyle({
+  const hoverStyle = new PIXI.TextStyle({
     fill: "#2660ff",
+    fontSize: 45,
+    fontFamily: "Daydream",
+  });
+
+  const wrongStyle = new PIXI.TextStyle({
+    fill: "#b70000",
     fontSize: 45,
     fontFamily: "Daydream",
   });
@@ -251,7 +282,7 @@
   answer1.eventMode = "static";
   answer1.cursor = "pointer";
   answer1.on("pointerover", () => {
-    answer1.style = defaultHoverStyle;
+    answer1.style = hoverStyle;
     answer1.scale = 1.05;
   });
   answer1.on("pointerout", () => {
@@ -273,7 +304,7 @@
   answer2.eventMode = "static";
   answer2.cursor = "pointer";
   answer2.on("pointerover", () => {
-    answer2.style = defaultHoverStyle;
+    answer2.style = hoverStyle;
     answer2.scale = 1.05;
   });
   answer2.on("pointerout", () => {
@@ -295,7 +326,7 @@
   answer3.eventMode = "static";
   answer3.cursor = "pointer";
   answer3.on("pointerover", () => {
-    answer3.style = defaultHoverStyle;
+    answer3.style = hoverStyle;
     answer3.scale = 1.05;
   });
   answer3.on("pointerout", () => {
@@ -317,7 +348,7 @@
   answer4.eventMode = "static";
   answer4.cursor = "pointer";
   answer4.on("pointerover", () => {
-    answer4.style = defaultHoverStyle;
+    answer4.style = hoverStyle;
     answer4.scale = 1.05;
   });
   answer4.on("pointerout", () => {
@@ -376,15 +407,47 @@
     }
   }
 
-  function clickAnswer(answer) {
+  async function clickAnswer(answer) {
     if (answer.text == questions[questionNumber].correct) {
       console.log("correct");
+      
+      // Attack Spell Effect Logic
+      const colors = ["Blue","Green","Orange","Purple"];
+      let color = colors[Math.floor(4 * Math.random())];
+      let spellnum = String(Math.floor(30 * Math.random())).padStart(2, '0');
+      await PIXI.Assets.load(`../sprites/Spells/${color}/${color}Spell${spellnum}.json`);
+      // Create an array to store the textures
+      const spellTextures = [];
+      let i;
+    
+      for (i = 0; i < 5; i++)
+      {
+        const texture = PIXI.Texture.from(`${color}Spell${spellnum}_${i}.png`);
+        spellTextures.push(texture);
+      }
+    
+      const spell = new PIXI.AnimatedSprite(spellTextures);
+      spell.anchor.set(0.5);
+      spell.x = 0;
+      spell.y = 0;
+      spell.scale = 7.5;
+      spell.animationSpeed = 0.2;
+      spell.loop = false;
+      spell.play();
+      spell.onComplete = () => {
+        spell.destroy();
+      };
+      enemy.addChild(spell);
+
+
       questions.splice(questionNumber, 1);
       console.log(questions);
       questionNumber = Math.floor(Math.random() * questions.length);
       console.log(questionNumber);
     } else if (answer.text != questions[questionNumber].correct) {
       console.log("incorrect");
+      answer.style = wrongStyle;
+      answer.eventMode = "passive";
     }
   }
 
@@ -394,8 +457,8 @@
 
     leveltracker.scale = 1 + 0.1 * Math.abs(Math.cos(elapsed / 25.0));
 
-    enemy.x = slimeDefaultLocation["x"] + 2 * Math.cos(elapsed / 15.0);
-    enemy.y = slimeDefaultLocation["y"] + 15 * Math.cos(elapsed / 20.0);
+    enemy.x = slimeDefaultLocation.x + 2 * Math.cos(elapsed / 15.0);
+    enemy.y = slimeDefaultLocation.y + 15 * Math.cos(elapsed / 20.0);
 
     spellbook.x += 0.01 * Math.cos(elapsed / 45.0);
     spellbook.y += 0.075 * Math.cos(elapsed / 35.0);
@@ -410,9 +473,17 @@
     if (questions[questionNumber].question != question.text) {
       question.text = questions[questionNumber].question;
       answer1.text = questions[questionNumber].answer1;
+      answer1.style = defaultStyle;
+      answer1.eventMode = "static";
       answer2.text = questions[questionNumber].answer2;
+      answer2.style = defaultStyle;
+      answer2.eventMode = "static";
       answer3.text = questions[questionNumber].answer3;
+      answer3.style = defaultStyle;
+      answer3.eventMode = "static";
       answer4.text = questions[questionNumber].answer4;
+      answer4.style = defaultStyle;
+      answer4.eventMode = "static";
     }
   });
 })();

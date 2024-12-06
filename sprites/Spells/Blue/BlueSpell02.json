@@ -1,0 +1,55 @@
+{"frames": {
+
+"BlueSpell02_0.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"BlueSpell02_1.png":
+{
+	"frame": {"x":35,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"BlueSpell02_2.png":
+{
+	"frame": {"x":69,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"BlueSpell02_3.png":
+{
+	"frame": {"x":103,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"BlueSpell02_4.png":
+{
+	"frame": {"x":137,"y":1,"w":31,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":31,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"animations": {
+	"BlueSpell02": ["BlueSpell02_0.png","BlueSpell02_1.png","BlueSpell02_2.png","BlueSpell02_3.png","BlueSpell02_4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "BlueSpell02.png",
+	"format": "RGBA8888",
+	"size": {"w":169,"h":34},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fb61a440608ba50f0433a3e45ccad629:a69154ac9bd791b4910e201040077428:1cfeb4b2d7c545ee14bb3989d3f4352c$"
+}
+}
