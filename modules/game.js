@@ -12,6 +12,7 @@
   await PIXI.Assets.loadBundle("fonts");
 
   let currentLevel = 1;
+  let isLoading = false;
   let levelTime = 30.0;
   let levelInterval = setInterval(levelTimer, 1000);
 
@@ -157,6 +158,8 @@
   // Loads first enemy into default position.
   const slimeDefaultLocation = { x: 935, y: 700 };
 
+  let enemyHealthValue = 2;
+
   await PIXI.Assets.load("../sprites/Enemies/PurpleSlime.png");
   const enemy = PIXI.Sprite.from("../sprites/Enemies/PurpleSlime.png");
   app.stage.addChild(enemy);
@@ -171,31 +174,6 @@
   enemyHealth.scale = 1.5;
   enemyHealth.x = 0;
   enemyHealth.y = -130;
-
-
-//   await PIXI.Assets.load('../sprites/Spells/Blue/BlueSpell01.json');
-//   // Create an array to store the textures
-//   const spellTextures = [];
-//   let i;
-
-//   for (i = 0; i < 5; i++)
-//   {
-//     const texture = PIXI.Texture.from(`BlueSpell01_${i}.png`);
-//     spellTextures.push(texture);
-//   }
-
-//   const spell = new PIXI.AnimatedSprite(spellTextures);
-//   spell.anchor.set(0.5);
-//   spell.x = 0;
-//   spell.y = 0;
-//   spell.scale = 7.5;
-//   spell.animationSpeed = 0.2;
-//   spell.loop = false;
-//   spell.play();
-//   spell.onComplete = () => {
-//     spell.destroy();
-//   };
-//   enemy.addChild(spell);
 
   await PIXI.Assets.load("../sprites/UI/QuestionScroll.png");
   const scroll = PIXI.Sprite.from("../sprites/UI/QuestionScroll.png");
@@ -221,35 +199,6 @@
   // changed for list testing
   // question.text = "What is the name of the latest Nintendo system?";
   question.text = questions[questionNumber].question;
-
-  // Just for testing level changes
-  question.eventMode = "static";
-  question.cursor = "pointer";
-  question.on("pointerdown", () => {
-    if (currentLevel < 5) {
-      console.log("Next Level");
-      clearInterval(levelInterval);
-      let lerpTracker = 0;
-      const levelTicker = new PIXI.Ticker();
-      levelTicker.add((ticker) => {
-        console.log(lerpTracker);
-        leveltracker.y = lerp(
-          levelTrackerLocations[`level${currentLevel}`],
-          levelTrackerLocations[`level${currentLevel + 1}`],
-          lerpTracker / 60
-        );
-        lerpTracker += ticker.deltaTime;
-        if (lerpTracker / 60 > 1) {
-          leveltracker.y = levelTrackerLocations[`level${currentLevel + 1}`];
-          currentLevel++;
-          levelTime = 30.0;
-          levelInterval = setInterval(levelTimer, 1000);
-          levelTicker.destroy();
-        }
-      });
-      levelTicker.start();
-    }
-  });
 
   await PIXI.Assets.load("../sprites/UI/Spellbook.png");
   const spellbook = PIXI.Sprite.from("../sprites/UI/Spellbook.png");
@@ -374,15 +323,12 @@
     level5: 54,
   };
 
-  await PIXI.Assets.load("../sprites/UI/LevelTracker.png");
-  const leveltracker = PIXI.Sprite.from("../sprites/UI/LevelTracker.png");
-  levelmap.addChild(leveltracker);
-  leveltracker.anchor.set(0.5);
-  leveltracker.x = leveltracker.width / 2 + 3;
-  leveltracker.y = levelTrackerLocations["level1"];
-
-  await PIXI.Assets.load("../sprites/UI/Hourglass_Full.png");
-  const hourglass = PIXI.Sprite.from("../sprites/UI/Hourglass_Full.png");
+  await PIXI.Assets.load("../sprites/UI/Hourglass/0.png");
+  await PIXI.Assets.load("../sprites/UI/Hourglass/1.png");
+  await PIXI.Assets.load("../sprites/UI/Hourglass/2.png");
+  await PIXI.Assets.load("../sprites/UI/Hourglass/3.png");
+  await PIXI.Assets.load("../sprites/UI/Hourglass/4.png");
+  const hourglass = PIXI.Sprite.from("../sprites/UI/Hourglass/0.png");
   app.stage.addChild(hourglass);
   hourglass.anchor.set(0.5);
   hourglass.x = 94;
@@ -396,14 +342,40 @@
   timer.anchor.set(0.5);
   timer.y = -125;
 
+  await PIXI.Assets.load("../Sprites/Backgrounds/Level0.png");
+  let loadingscreen = PIXI.Sprite.from("../Sprites/Backgrounds/Level0.png");
+  app.stage.addChild(loadingscreen);
+
+  // Styling for fitting the background to the canvas.
+  loadingscreen.anchor.set(0.5);
+  loadingscreen.x = app.screen.width / 2;
+  loadingscreen.y = app.screen.height / 2;
+  loadingscreen.alpha = 0;
+
+  await PIXI.Assets.load("../sprites/UI/LevelTracker.png");
+  const leveltracker = PIXI.Sprite.from("../sprites/UI/LevelTracker.png");
+  levelmap.addChild(leveltracker);
+  leveltracker.anchor.set(0.5);
+  leveltracker.x = leveltracker.width / 2 + 3;
+  leveltracker.y = levelTrackerLocations["level1"];
+
+
+
   function lerp(a, b, alpha) {
     return a + alpha * (b - a);
   }
 
   function levelTimer() {
     levelTime--;
-    if (levelTime == 0) {
+    if (levelTime <= 0) {
+      hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/4.png").texture;
       clearInterval(levelInterval);
+    } else if (levelTime <= 7) {
+      hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/3.png").texture;
+    }else if (levelTime <= 14) {
+      hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/2.png").texture;
+    }else if (levelTime <= 22) {
+      hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/1.png").texture;
     }
   }
 
@@ -414,7 +386,7 @@
       // Attack Spell Effect Logic
       const colors = ["Blue","Green","Orange","Purple"];
       let color = colors[Math.floor(4 * Math.random())];
-      let spellnum = String(Math.floor(30 * Math.random())).padStart(2, '0');
+      let spellnum = String(Math.floor(29 * Math.random()) + 1).padStart(2, '0');
       await PIXI.Assets.load(`../sprites/Spells/${color}/${color}Spell${spellnum}.json`);
       // Create an array to store the textures
       const spellTextures = [];
@@ -440,6 +412,80 @@
       enemy.addChild(spell);
 
 
+      // Damage Enemy
+      enemyHealthValue--;
+      if (enemyHealthValue == 1) {
+        await PIXI.Assets.load("../sprites/UI/1hp.png");
+        enemyHealth.texture = PIXI.Sprite.from("../sprites/UI/1hp.png").texture;
+      }
+      if (enemyHealthValue == 0) {
+        isLoading = true;
+        await PIXI.Assets.load("../sprites/UI/0hp.png");
+        enemyHealth.texture = PIXI.Sprite.from("../sprites/UI/0hp.png").texture;
+
+        answer1.eventMode = "passive";
+        answer2.eventMode = "passive";
+        answer3.eventMode = "passive";
+        answer4.eventMode = "passive";
+
+        let lerpTracker = 0;
+        // let oldEnemyY = slimeDefaultLocation.y;
+        const enemyTicker = new PIXI.Ticker();
+        enemyTicker.add(async (ticker) => {
+            // slimeDefaultLocation.y = lerp( oldEnemyY, oldEnemyY + 350, lerpTracker / 60 );
+            enemy.scale = lerp( 1, 0, lerpTracker / 60 );
+            loadingscreen.alpha = lerp( 0, 1, lerpTracker / 60 );
+            lerpTracker += ticker.deltaTime;
+            if (lerpTracker / 60 > 1) {
+                // slimeDefaultLocation.y = oldEnemyY + 350;
+                enemyTicker.destroy();
+                currentLevel++;
+
+                if (currentLevel < 6) {
+                    console.log("Next Level");
+                    clearInterval(levelInterval);
+                    let lerpTracker = 0;
+                    const levelTicker = new PIXI.Ticker();
+                    levelTicker.add((ticker) => {
+                      // console.log(lerpTracker);
+                      leveltracker.y = lerp(
+                        levelTrackerLocations[`level${currentLevel - 1}`],
+                        levelTrackerLocations[`level${currentLevel}`],
+                        lerpTracker / 60
+                      );
+                      lerpTracker += ticker.deltaTime;
+                      if (lerpTracker / 60 > 1) {
+                        leveltracker.y = levelTrackerLocations[`level${currentLevel}`];
+                        levelTicker.destroy();
+                      }
+                    });
+                    levelTicker.start();
+                  }
+
+                await PIXI.Assets.load(`../sprites/Backgrounds/Level${currentLevel}.png`);
+                background.texture = PIXI.Sprite.from(`../sprites/Backgrounds/Level${currentLevel}.png`).texture;
+                enemyHealth.texture = PIXI.Sprite.from("../sprites/UI/2hp.png").texture;
+                enemyHealthValue = 2;
+                enemy.scale = 1;
+                isLoading = false;
+
+                let loadinLerpTracker = 0;
+                // let oldEnemyY = slimeDefaultLocation.y;
+                const loadingTicker = new PIXI.Ticker();
+                loadingTicker.add((ticker) => {
+                    loadingscreen.alpha = lerp( 1, 0, loadinLerpTracker / 60 );
+                    loadinLerpTracker += ticker.deltaTime;
+                    if (loadinLerpTracker / 60 > 1) {
+                        loadingTicker.destroy();
+                    }
+                });
+                loadingTicker.start();
+            }
+        });
+        enemyTicker.start();
+      }
+
+      // Change Question
       questions.splice(questionNumber, 1);
       console.log(questions);
       questionNumber = Math.floor(Math.random() * questions.length);
@@ -448,6 +494,7 @@
       console.log("incorrect");
       answer.style = wrongStyle;
       answer.eventMode = "passive";
+      levelTime -= 10;
     }
   }
 
@@ -460,17 +507,28 @@
     enemy.x = slimeDefaultLocation.x + 2 * Math.cos(elapsed / 15.0);
     enemy.y = slimeDefaultLocation.y + 15 * Math.cos(elapsed / 20.0);
 
-    spellbook.x += 0.01 * Math.cos(elapsed / 45.0);
+    spellbook.x += 0.02 * Math.cos(elapsed / 25.0);
     spellbook.y += 0.075 * Math.cos(elapsed / 35.0);
 
     scroll.x -= (0.03 * Math.cos(elapsed / 65.0)) / 2;
     scroll.y -= (0.01 * Math.cos(elapsed / 65.0)) / 2;
 
+    hourglass.rotation += 0.0005 * ((30 - levelTime) / 12) * Math.cos(elapsed / 20);
+
+    console.log(levelTime);
+
     if (levelTime >= 0) {
       timer.text = Math.floor(levelTime);
+    } else {
+        timer.text = 0;
     }
 
-    if (questions[questionNumber].question != question.text) {
+    if ((questions[questionNumber].question != question.text) && !isLoading) {
+      levelTime = 30.0;
+      hourglass.rotation = 0;
+      clearInterval(levelInterval);
+      hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/0.png").texture;
+      levelInterval = setInterval(levelTimer, 1000);
       question.text = questions[questionNumber].question;
       answer1.text = questions[questionNumber].answer1;
       answer1.style = defaultStyle;
