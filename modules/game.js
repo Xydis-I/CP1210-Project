@@ -12,9 +12,13 @@
   await PIXI.Assets.loadBundle("fonts");
 
   let currentLevel = 1;
+  let questionsAnswered = 0;
+  let wrongAnswers = 0;
   let isLoading = false;
   let levelTime = 30.0;
   let levelInterval = setInterval(levelTimer, 1000);
+  sessionStorage.setItem(`level_times`, "");
+  sessionStorage.setItem(`wrong_answers`, "");
 
   const questions = [
     {
@@ -517,7 +521,23 @@
   async function clickAnswer(answer) {
     if (answer.text == questions[questionNumber].correct) {
       console.log("correct");
-      
+
+      questionsAnswered++;
+      let questionTimes = sessionStorage.getItem(`level_times`);
+      if (questionTimes == "") {
+        sessionStorage.setItem(`level_times`, levelTime);
+      } else {
+        sessionStorage.setItem(`level_times`, questionTimes + `,${levelTime}`);
+      }
+
+      let totalWrong = sessionStorage.getItem(`wrong_answers`);
+      if (totalWrong == "") {
+        sessionStorage.setItem(`wrong_answers`, wrongAnswers);
+      } else {
+        sessionStorage.setItem(`wrong_answers`, totalWrong + `,${wrongAnswers}`);
+      }
+      wrongAnswers = 0;
+
       // Attack Spell Effect Logic
       const colors = ["Blue","Green","Orange","Purple"];
       let color = colors[Math.floor(4 * Math.random())];
@@ -597,6 +617,11 @@
                     levelTicker.start();
                   }
 
+                  console.log(`Current Level: ${currentLevel}`)
+                  if (currentLevel == 6) {
+                    location.href = "../Screens/gameWinPage.html";
+                  }
+
                 // Added a re-loader to update the enemy on load.
                 // also add re-loader for enemyHealth location on load as well 
                 await PIXI.Assets.load(`../Sprites/Enemies/${currentEnemy}.png`)  
@@ -636,6 +661,7 @@
       console.log(questionNumber);
     } else if (answer.text != questions[questionNumber].correct) {
       console.log("incorrect");
+      wrongAnswers++;
       answer.style = wrongStyle;
       answer.eventMode = "passive";
       levelTime -= 10;
@@ -668,7 +694,13 @@
     }
 
     if ((questions[questionNumber].question != question.text) && !isLoading) {
-      levelTime = 30.0;
+      // Level 1: 30
+      // Level 2: 25
+      // Level 3: 20
+      // Level 4: 15
+      // Level 5: 10
+      levelTime = 30.0 - ((currentLevel - 1) * 5);
+
       hourglass.rotation = 0;
       clearInterval(levelInterval);
       hourglass.texture = PIXI.Sprite.from("../sprites/UI/Hourglass/0.png").texture;

@@ -34,6 +34,17 @@ body {
     background-color: #0c991f;
 }
 
+#starthtml {
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: #12095f;
+}
+
+#starthtml:hover {
+    background-color: #1a2abd;
+}
+
 #text {
     font-size: larger;
 }
