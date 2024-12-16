@@ -181,63 +181,6 @@
   let currentEnemy = "";
   let enemyDefaultLocation = null;
 
-//   if (currentLevel == 1) {
-//     let random = Math.floor(Math.random() * 2);
-//     console.log("Enemy num", random);
-//     if (random == 0) {
-//         currentEnemy = "PurpleSlime";
-//         enemyDefaultLocation = slimeDefaultLocation;
-//     }
-//     if (random == 1) {
-//         currentEnemy = "BatEye";
-//         enemyDefaultLocation = batDefaultLocation;
-//     }
-//   }
-//   else if (currentLevel == 2) {
-//     let random = Math.floor(Math.random() * 2);
-//     if (random == 0) {
-//         currentEnemy = "Goblin";
-//         enemyDefaultLocation = goblinDefaultLocation;
-//     }
-//     if (random == 1) {
-//         currentEnemy = "Skeleton";
-//         enemyDefaultLocation = skeletonDefaultLocation;
-//     }
-//   }
-//   else if (currentLevel == 3) {
-//     let random = Math.floor(Math.random() * 2);
-//     if (random == 0) {
-//         currentEnemy = "Basilisk";
-//         enemyDefaultLocation = basiliskDefaultLcation;
-//     }
-//     if (random == 1) {
-//         currentEnemy = "Ghost";
-//         enemyDefaultLocation = ghostDefaultLocation;
-//     }
-//   }
-//   else if (currentLevel == 4) {
-//     let random = Math.floor(Math.random() * 2);
-//     if (random == 0) {
-//         currentEnemy = "Mimic";
-//         enemyDefaultLocation = mimicDefaultLocation;
-//     }
-//     if (random == 1) {
-//         currentEnemy = "Wizard";
-//         enemyDefaultLocation = wizardDefaultLocation;
-//     }
-//   }
-//   else if (currentLevel == 5) {
-//     let random = Math.floor(Math.random() * 2);
-//     if (random == 0) {
-//         currentEnemy = "MindFlayer";
-//         enemyDefaultLocation = mindFlayerDefaulaLocation;
-//     }
-//     if (random == 1) {
-//         currentEnemy = "StoneGolem";
-//         enemyDefaultLocation = stoneGolemDefaultLocation;
-//     }
-//   }
-
     changeEnemies(currentLevel);  
 
   await PIXI.Assets.load(`../sprites/Enemies/${currentEnemy}.png`);

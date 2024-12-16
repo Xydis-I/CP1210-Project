@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Jacquard 12", system-ui;
-    src: url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+    font-family: "Daydream";
+    src: url('../Fonts/Daydream.ttf');
   }
   
 body {
@@ -17,23 +17,17 @@ body {
     width: 70%;
     min-height: 600px;
     min-width: 800px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#win {
-    color: green;
-}
-
-#lose {
-    color: red;
-}
-
 #return {
-    width: 290px;
-    height: 50px;
+    width: 350px;
+    height: 120px;
     color: white;
-    font-family: "Jacquard 12", system-ui;
+    font-family: "Daydream";
+    font-size: 100px;
     background-color: #095f15;
     font-size: x-large;
 }
