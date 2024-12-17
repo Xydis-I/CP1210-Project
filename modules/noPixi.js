@@ -7,6 +7,7 @@ const $ = selector => document.querySelector(selector);
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DomContentLoaded");
     let currentLevel = 1;
+    let currentEnemy = 'slime'
     let questionsAnswered = 0;
     let wrongAnswers = 0;
     let levelTime = 30.0;
@@ -131,6 +132,54 @@ document.addEventListener("DOMContentLoaded", () => {
             $(element).disabled = false;
         });
     }
+    function changeEnemies(currentLevel) {
+    
+        if (currentLevel == 1) {
+          let random = Math.floor(Math.random() * 2);
+          console.log("Enemy num", random);
+          if (random == 0) {
+              currentEnemy = "PurpleSlime";
+          }
+          if (random == 1) {
+              currentEnemy = "BatEye";
+          }
+        }
+        else if (currentLevel == 2) {
+          let random = Math.floor(Math.random() * 2);
+          if (random == 0) {
+              currentEnemy = "Goblin";
+          }
+          if (random == 1) {
+              currentEnemy = "Skeleton";
+          }
+        }
+        else if (currentLevel == 3) {
+          let random = Math.floor(Math.random() * 2);
+          if (random == 0) {
+              currentEnemy = "Basilisk";
+          }
+          if (random == 1) {
+              currentEnemy = "Ghost";
+          }
+        }
+        else if (currentLevel == 4) {
+          let random = Math.floor(Math.random() * 2);
+          if (random == 0) {
+              currentEnemy = "Mimic";
+          }
+          if (random == 1) {
+              currentEnemy = "Wizard";
+          }
+        }
+        else if (currentLevel == 5) {
+          let random = Math.floor(Math.random() * 2);
+          if (random == 0) {
+              currentEnemy = "MindFlayer";
+          }
+          if (random == 1) {
+              currentEnemy = "StoneGolem";
+          }
+        }};
 
     function nextLevel() {
         ["#answer1", "#answer2", "#answer3", "#answer4"].forEach(element => {
@@ -141,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             nextQuestion();
+            changeEnemies(currentLevel);
             if (currentLevel >= 6) {
                 location.href = "../Screens/gameOutcome.html";
             }
@@ -149,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             enemyHP = 2;
             $("#levelTracker").className = `levelTracker${currentLevel}F`;
             $("#gameBox").className = `level${currentLevel}`;
+            $("#enemy").className =  `${currentEnemy}`;
         }, 1500);
     }
 });

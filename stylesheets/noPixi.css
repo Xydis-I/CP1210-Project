@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Daydream";
+    src: url('../Fonts/Daydream.ttf');
+  }
+
 body {
     text-align: center;
     background-image:url("../sprites/backgrounds/mossBackground.jpg");
@@ -267,6 +272,113 @@ main {
     background-image: url("../sprites/Enemies/PurpleSlime.png");
 
     justify-content: center;
+}
+
+.Bateye {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/BatEye.png");
+
+}
+.Goblin {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Goblin.png");
+
+}
+
+.Skeleton {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Skeleton.png");
+
+}
+
+.Basilisk {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Basilisk.png");
+
+}
+
+.Ghost {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Ghost.png");
+
+}
+
+.Mimic {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Mimic.png");
+
+}
+
+.Wizard {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Wizard.png");
+
+}
+
+.StoneGolem{
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/StoneGolem.png");
+
+}
+
+.MindFlayer {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/MindFlayer.png");
+
 }
 
 .hp2 {
