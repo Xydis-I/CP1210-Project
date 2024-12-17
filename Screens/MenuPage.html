@@ -27,7 +27,7 @@
             <button id="start" onclick={startGame()}>Start the game!</button>
             <br>
             <p id="text">This is a version pf the trivia that is only for just the trivia questions without the dungeon gameplay.</p>
-            <button id="starthtml" onclick={}>HTML Only Version</button>
+            <button id="starthtml" onclick={htmlGame()}>HTML Only Version</button>
             <h2>Github</h2>
             <a href="https://github.com/Xydis-I/CP1210-Project">Project Repository</a>
             <h2>Credits</h2>
@@ -38,6 +38,11 @@
         const startGame = () => {
         location.replace(location.pathname = './gamePage.html');
         }
+
+        const htmlGame = () => {
+            location.replace(location.pathname = './htmlOnly.html');
+        }
+
         document.addEventListener("DOMContentLoaded", () =>{
             const $ = selector => document.querySelector(selector);
             $("audio").volume = 0.05;
