@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentLevel = 1;
     let questionsAnswered = 0;
     let wrongAnswers = 0;
-    let isLoading = false;
     let levelTime = 30.0;
     let levelInterval = setInterval(levelTimer, 1000);
     sessionStorage.setItem(`level_times`, "");
