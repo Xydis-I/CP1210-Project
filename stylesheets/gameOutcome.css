@@ -24,7 +24,7 @@ body {
 }
 
 #return {
-    width: 350px;
+    width: 600px;
     height: 120px;
     color: white;
     font-family: "Daydream";
@@ -35,4 +35,12 @@ body {
 
 #return:hover {
     background-color: #0c991f;
+}
+
+h1,h2 {
+    color: #2660ff;
+}
+
+p {
+    color: #1b0401;
 }
