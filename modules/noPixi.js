@@ -7,13 +7,16 @@ const $ = selector => document.querySelector(selector);
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DomContentLoaded");
     let currentLevel = 1;
-    let currentEnemy = 'slime'
+    let currentEnemy = null;
     let questionsAnswered = 0;
     let wrongAnswers = 0;
     let levelTime = 30.0;
     let levelInterval = setInterval(levelTimer, 1000);
     sessionStorage.setItem(`level_times`, "");
     sessionStorage.setItem(`wrong_answers`, "");
+
+    changeEnemies(currentLevel);
+    $("#enemy").className =  `${currentEnemy}`;
 
     let enemyHP = 2;
 
@@ -198,8 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
             $("#hp").className = "hp2";
             enemyHP = 2;
             $("#levelTracker").className = `levelTracker${currentLevel}F`;
-            $("#gameBox").className = `level${currentLevel}`;
             $("#enemy").className =  `${currentEnemy}`;
+            $("#gameBox").className = `level${currentLevel}`;
         }, 1500);
     }
 });
