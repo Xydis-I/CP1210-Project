@@ -24,6 +24,8 @@ main {
     border-color: #6b5420;
     border-style: solid;
     background-color: wheat;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .level1 {
