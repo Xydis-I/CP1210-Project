@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let correctAnswer = questions[questionNumber].correct;
 
+    questions.splice(questionNumber, 1);
+
     ["#answer1", "#answer2", "#answer3", "#answer4"].forEach(element => {
         $(element).addEventListener("click", () => {
             if ($(element).textContent == correctAnswer) {
@@ -119,6 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         levelTime = 30.0 - ((currentLevel - 1) * 5);
         correctAnswer = questions[questionNumber].correct;
+
+        questions.splice(questionNumber, 1);
 
         $("#hourglass").className = "hourglass0";
 
