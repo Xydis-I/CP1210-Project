@@ -18,14 +18,14 @@
             </div>
 
             <div class="spellbook">
-                <button class="answer">Playstation</button>
-                <button class="answer">Switch</button>
-                <button class="answer">Xbox</button>
-                <button class="answer">WII</button>
+                <button id="answer1" class="answer">Playstation</button>
+                <button id="answer2" class="answer">Switch</button>
+                <button id="answer3" class="answer">Xbox</button>
+                <button id="answer4" class="answer">WII</button>
             </div>
             
             <div class="levelMap">
-                <div class="levelTracker"></div>
+                <div id="levelTracker" class="levelTracker1F"></div>
             </div>
 
             <div id="hourglass" class="hourglass0">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </main>
-    <script src="../libraries/pixi.js"></script>
+    <script type="module" src="../modules/htmlOnly.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () =>{
             const $ = selector => document.querySelector(selector);

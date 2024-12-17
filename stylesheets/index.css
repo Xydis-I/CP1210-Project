@@ -11,6 +11,8 @@ main {
   margin-left: auto;
   margin-right: auto;
   margin-top: 170px;
+  justify-content: center;
+  align-content: center;
 }
 
 h1 {
@@ -25,6 +27,13 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+img {
+  filter: drop-shadow(8px 8px 2px black);
 }
 
 #buttons {
