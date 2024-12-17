@@ -114,3 +114,125 @@ main {
     text-align: center;
     width: 80%;
 }
+
+.levelMap {
+    position: relative;
+    top: -410px;
+    left: 2%;
+    width: 6.5%;
+    aspect-ratio: 1/5.56;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelMap.png");
+}
+
+.levelTracker {
+    position: relative;
+    top: 357px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.hourglass0 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/0.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass1 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/1.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass2 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/2.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass3 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/3.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass4 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/4.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.timer {
+    position: relative;
+    top: -62px;
+    font-family: 'Daydream';
+    font-size: 28px;
+    color: #dead30;
+    text-align: center;
+    width: 80%;
+}
+
+.slime {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/PurpleSlime.png");
+
+    justify-content: center;
+}
+
+.hp2 {
+    position: relative;
+    width: 85%;
+    top: -15px;
+    margin: auto;
+    aspect-ratio: 9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/2hp.png");
+}
