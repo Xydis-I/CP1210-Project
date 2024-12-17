@@ -336,6 +336,9 @@ import { questions as questionFile } from '../libraries/questions.js';
       console.log("correct");
 
       questionsAnswered++;
+      if (levelTime < 0) {
+        levelTime = 0;
+      }
       let questionTimes = sessionStorage.getItem(`level_times`);
       if (questionTimes == "") {
         sessionStorage.setItem(`level_times`, levelTime);
@@ -448,6 +451,7 @@ import { questions as questionFile } from '../libraries/questions.js';
                 isLoading = false;
 
                 let loadinLerpTracker = 0;
+
                 const loadingTicker = new PIXI.Ticker();
                 loadingTicker.add((ticker) => {
                     loadingscreen.alpha = lerp( 1, 0, loadinLerpTracker / 60 );
