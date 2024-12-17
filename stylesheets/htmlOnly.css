@@ -50,6 +50,47 @@ main {
     background-image: url("../sprites/backgrounds/Level5.png");
 }
 
+.spellbook {
+    position: relative;
+    top: 390px;
+    left: 180px;
+    width: 556.5px;
+    aspect-ratio: 3.9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Spellbook.png");
+
+    display: grid;
+    grid-template-columns: 40% 40%;
+    column-gap: 15%;
+    row-gap: 10%;
+    justify-content: center;
+    align-content: center;
+}
+
+.question {
+    position: relative;
+    top: -10px;
+    font-family: 'Daydream';
+    font-size: 21px;
+    color: #1b0401;
+    background: none;
+    border: none;
+}
+
+.question:hover {
+    color: #2660ff;
+}
+
+.wrongAnswer {
+    position: relative;
+    top: -10px;
+    font-family: 'Daydream';
+    font-size: 21px;
+    color: #b70000;
+    background: none;
+    border: none;
+}
+
 canvas {
     text-align: center;
     width: 100%;
