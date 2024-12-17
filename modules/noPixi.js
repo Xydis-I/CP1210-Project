@@ -50,6 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     levelTime = 0;
                 }
                 
+                if (levelTime <= 0) {
+                    $("#hourglass").className = "hourglass4";
+                } else if (levelTime <= 7) {
+                    $("#hourglass").className = "hourglass3";
+                } else if (levelTime <= 14) {
+                    $("#hourglass").className = "hourglass2";
+                } else if (levelTime <= 22) {
+                    $("#hourglass").className = "hourglass1";
+                }
+                
                 $("#timer").textContent = levelTime;
                 wrongAnswers++;
                 $(element).className = "wrongAnswer";
@@ -62,6 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (levelTime >= 0) {
             $("#timer").textContent = levelTime;
             levelTime--;
+            if (levelTime <= 0) {
+                $("#hourglass").className = "hourglass4";
+            } else if (levelTime <= 7) {
+                $("#hourglass").className = "hourglass3";
+            } else if (levelTime <= 14) {
+                $("#hourglass").className = "hourglass2";
+            } else if (levelTime <= 22) {
+                $("#hourglass").className = "hourglass1";
+            }
         } else {
             $("#timer").textContent = 0;
         }
@@ -98,10 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
         $("#answer3").textContent = questions[questionNumber].answer3;
         $("#answer4").textContent = questions[questionNumber].answer4;
 
+        levelTime = 30.0 - ((currentLevel - 1) * 5);
         correctAnswer = questions[questionNumber].correct;
 
+        $("#hourglass").className = "hourglass0";
+
         ["#answer1", "#answer2", "#answer3", "#answer4"].forEach(element => {
-            levelTime = 30.0 - ((currentLevel - 1) * 5);
             $("#timer").textContent = levelTime;
             $(element).className = "answer";
             $(element).disabled = false;
