@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, X-Content-Type-Options=">
+    <title>Trivia Dungeon</title>
+    <link rel="icon" href="../sprites/Enemies/Mimic.png">
+    <link rel="stylesheet" href="../stylesheets/nopixi.css">
+    <audio loop> 
+        <source src="../Audio/gameAudio.mp3" type="audio/mp3">
+    </audio>
+</head>
+<body>
+    <main>
+        <div id="gameBox" class="level1">
+            <div class="scroll">
+                <p id="question" class="question">What is the name of the latest Nintendo system?</p>
+            </div>
+
+            <div class="spellbook">
+                <button id="answer1" class="answer">Playstation</button>
+                <button id="answer2" class="answer">Switch</button>
+                <button id="answer3" class="answer">Xbox</button>
+                <button id="answer4" class="answer">WII</button>
+            </div>
+            
+            <div class="levelMap">
+                <div id="levelTracker" class="levelTracker1F"></div>
+            </div>
+
+            <div id="hourglass" class="hourglass0">
+                <p id="timer" class="timer">30</p>
+            </div>
+
+            <div id="enemy" class="">
+                <div id="hp" class="hp2"></div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../modules/nopixi.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            const $ = selector => document.querySelector(selector);
+            $("audio").volume = 0.05;
+            $("audio").play();
+        });
+    </script>
+</body>
+</html>

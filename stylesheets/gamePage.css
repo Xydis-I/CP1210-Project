@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    background-image:url("../sprites/backgrounds/mossBackground.jpg");
+}
+
+main {
+    text-align: center;
+    width: 70%;
+    aspect-ratio: 1.56/1;
+    min-height: 540px;
+    min-width: 843px;
+    max-height: 1080px;
+    max-width: 1686px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gameBox {
+    text-align: center;
+    margin-top: 80px;
+    height: calc(100% - 7px);
+    border: 5px;
+    border-color: #6b5420;
+    border-style: solid;
+    background-color: wheat;
+}
+
+canvas {
+    text-align: center;
+    width: 100%;
+}

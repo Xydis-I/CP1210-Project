@@ -1,0 +1,412 @@
+@font-face {
+    font-family: "Daydream";
+    src: url('../Fonts/Daydream.ttf');
+  }
+
+body {
+    text-align: center;
+    background-image:url("../sprites/backgrounds/mossBackground.jpg");
+}
+
+main {
+    text-align: center;
+    width: 70%;
+    aspect-ratio: 1.56/1;
+    min-height: 540px;
+    min-width: 843px;
+    max-height: 1080px;
+    max-width: 1686px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gameBox {
+    text-align: center;
+    margin-top: 80px;
+    width: 1203.8px;
+    height: 771.083px;
+    border: 5px;
+    border-color: #6b5420;
+    border-style: solid;
+    background-color: wheat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.level1 {
+    background-size: 100%;
+    background-image: url("../sprites/backgrounds/Level1.png");
+}
+
+.level2 {
+    background-size: 100%;
+    background-image: url("../sprites/backgrounds/Level2.png");
+}
+
+.level3 {
+    background-size: 100%;
+    background-image: url("../sprites/backgrounds/Level3.png");
+}
+
+.level4 {
+    background-size: 100%;
+    background-image: url("../sprites/backgrounds/Level4.png");
+}
+
+.level5 {
+    background-size: 100%;
+    background-image: url("../sprites/backgrounds/Level5.png");
+}
+
+.spellbook {
+    position: relative;
+    top: 337px;
+    left: 20.5%;
+    width: 70%;
+    aspect-ratio: 3.9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Spellbook.png");
+
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 9%;
+    row-gap: 10%;
+    justify-content: center;
+    align-content: center;
+}
+
+.answer {
+    position: relative;
+    top: -15px;
+    font-family: 'Daydream';
+    font-size: 30px;
+    color: #1b0401;
+    background: none;
+    border: none;
+}
+
+.answer:hover {
+    color: #2660ff;
+}
+
+.answer:disabled {
+    color: #1b0401;
+}
+
+.wrongAnswer {
+    position: relative;
+    top: -15px;
+    font-family: 'Daydream';
+    font-size: 30px;
+    color: #b70000;
+    background: none;
+    border: none;
+}
+
+.scroll {
+    position: relative;
+    top: 20px;
+    left: 18%;
+    width: 75%;
+    aspect-ratio: 4.15/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/QuestionScroll.png");
+
+    display: flex;
+    justify-content: center;
+}
+
+.question {
+    position: relative;
+    top: 35px;
+    font-family: 'Daydream';
+    font-size: 30px;
+    color: #1b0401;
+    text-align: center;
+    width: 80%;
+}
+
+.levelMap {
+    position: relative;
+    top: -410px;
+    left: 2%;
+    width: 6.5%;
+    aspect-ratio: 1/5.56;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelMap.png");
+}
+
+.levelTracker1F {
+    position: relative;
+    top: 357px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.levelTracker2F {
+    position: relative;
+    top: 269px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.levelTracker3F {
+    position: relative;
+    top: 178px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.levelTracker4F {
+    position: relative;
+    top: 90px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.levelTracker5F {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/LevelTracker.png");
+}
+
+.hourglass0 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/0.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass1 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/1.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass2 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/2.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass3 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/3.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hourglass4 {
+    position: relative;
+    top: -220px;
+    left: 1%;
+    width: 7%;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/Hourglass/4.png");
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.timer {
+    position: relative;
+    top: -62px;
+    font-family: 'Daydream';
+    font-size: 28px;
+    color: #dead30;
+    text-align: center;
+    width: 80%;
+}
+
+.PurpleSlime {
+    position: relative;
+    top: -580px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/PurpleSlime.png");
+
+    justify-content: center;
+}
+
+.BatEye {
+    position: relative;
+    top: -620px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.5/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/BatEye.png");
+
+}
+.Goblin {
+    position: relative;
+    top: -610px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Goblin.png");
+
+}
+
+.Skeleton {
+    position: relative;
+    top: -630px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Skeleton.png");
+
+}
+
+.Basilisk {
+    position: relative;
+    top: -650px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 0.8/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Basilisk.png");
+
+}
+
+.Ghost {
+    position: relative;
+    top: -700px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Ghost.png");
+
+}
+
+.Mimic {
+    position: relative;
+    top: -620px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Mimic.png");
+
+}
+
+.Wizard {
+    position: relative;
+    top: -680px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 0.75/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/Wizard.png");
+
+}
+
+.StoneGolem{
+    position: relative;
+    top: -610px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1.1/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/StoneGolem.png");
+
+}
+
+.MindFlayer {
+    position: relative;
+    top: -630px;
+    left: 70px;
+    width: 17%;
+    margin: auto;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url("../sprites/Enemies/MindFlayer.png");
+
+}
+
+.hp2 {
+    position: relative;
+    width: 85%;
+    top: -15px;
+    margin: auto;
+    aspect-ratio: 9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/2hp.png");
+}
+
+.hp1 {
+    position: relative;
+    width: 85%;
+    top: -15px;
+    margin: auto;
+    aspect-ratio: 9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/1hp.png");
+}
+
+.hp0 {
+    position: relative;
+    width: 85%;
+    top: -15px;
+    margin: auto;
+    aspect-ratio: 9/1;
+    background-size: 100%;
+    background-image: url("../sprites/UI/0hp.png");
+}

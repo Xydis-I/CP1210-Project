@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia Dungeon</title>
+    <link rel="icon" href="../sprites/Enemies/Mimic.png">
+    <link rel="stylesheet" href="../stylesheets/gameOutcome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+    <audio loop> 
+      <source src="../Audio/gameWin.mp3" type="audio/mp3">
+    </audio>
+</head>
+<body>
+    <main>
+      <div id="box">
+        <h1 id="win">Congratulation!</h1>
+        <p>You have successfully escape the Trivia Dungeon!</p>
+        <h2>Game Stats</h2>
+        <div id="stats">
+          <p id="score"></p>
+          <h2>Level Times</h2>
+          <p id="level1"></p>
+          <p id="level2"></p>
+          <p id="level3"></p>
+          <p id="level4"></p>
+          <p id="level5"></p>
+        </div>
+        <br>
+        <button id="return" onclick={returnTitle()}>Return To Title Screen</button>
+      </div>
+    </main>
+    <script>
+      const returnTitle = () => {
+        location.replace(location.pathname = '../index.html');
+        }
+        document.addEventListener("DOMContentLoaded", () =>{
+            const $ = selector => document.querySelector(selector);
+            $("audio").volume = 0.05;
+            $("audio").play();
+
+            const levelTimes = sessionStorage.getItem("level_times").split(",");
+            const wrongAnswers = sessionStorage.getItem("wrong_answers").split(",");
+
+            let totalScore = 0;
+
+            for (let index = 0; index < 10; index++) {
+              totalScore += levelTimes[index] * (4 - wrongAnswers[index]);
+            }
+
+            $("#score").textContent = `Score: ${Math.floor(totalScore)}`;
+            $("#level1").textContent = `Level 1: ${levelTimes[0]}, ${levelTimes[1]} (Wrong: ${wrongAnswers[0]}, ${wrongAnswers[1]})`;
+            $("#level2").textContent = `Level 2: ${levelTimes[2]}, ${levelTimes[3]} (Wrong: ${wrongAnswers[2]}, ${wrongAnswers[3]})`;
+            $("#level3").textContent = `Level 3: ${levelTimes[4]}, ${levelTimes[5]} (Wrong: ${wrongAnswers[4]}, ${wrongAnswers[5]})`;
+            $("#level4").textContent = `Level 4: ${levelTimes[6]}, ${levelTimes[7]} (Wrong: ${wrongAnswers[6]}, ${wrongAnswers[7]})`;
+            $("#level5").textContent = `Level 5: ${levelTimes[8]}, ${levelTimes[9]} (Wrong: ${wrongAnswers[8]}, ${wrongAnswers[9]})`;
+        });
+    </script>   
+</body>
+</html>

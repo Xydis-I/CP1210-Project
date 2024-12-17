@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia Dungeon</title>
+    <link rel="icon" href="../sprites/Enemies/Mimic.png">
+    <link rel="stylesheet" href="../stylesheets/menuPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap">
+    <audio loop> 
+        <source src="../Audio/gameTitle.mp3" type="audio/mp3">
+    </audio>
+</head>
+<body>
+    
+    <!-- Game page will holds all the rending for the game win one div with nothing else but that in the html. -matt -->
+    <main>
+        <div id="menu">
+            <h1>Main Menu</h1>
+            <h2>Welcome To Trivia Dungeon!</h2>
+            <p id="text">In Trivia Dungeon the player is an adventurer well versed in the art word smithing.</br>
+               The player will have to used the knowledge that they have gained over the years from playing games</br>
+               to smite the enemies that block their escape from the Trivia Dungeon!
+            </p>
+            <p id="text">In Trivia Dungeon your score is based on the time it takes to answer a question.</br>
+               If you answer wrong time will be subtracted from your score.</br>
+               Watch your Time carefully! </p>
+            <button id="start" onclick={startGame()}>Start the game!</button>
+            <br>
+            <p id="text">This is a version of the game that has been made without the use of PixiJS.</p>
+            <button id="starthtml" onclick={htmlGame()}>No PixiJS Version</button>
+            <h2>Github</h2>
+            <a href="https://github.com/Xydis-I/CP1210-Project">Project Repository</a>
+            <h2>Credits</h2>
+            <p id="text">Created by: </br><a href="https://github.com/Xydis-I">Christian Barrett</a> & <a href="https://github.com/MattEKing">Matthew King</a></p>
+        </div>
+    </main>
+    <script>
+        const startGame = () => {
+        location.replace(location.pathname = './gamePage.html');
+        }
+
+        const htmlGame = () => {
+            location.replace(location.pathname = './noPixi.html');
+        }
+
+        document.addEventListener("DOMContentLoaded", () =>{
+            const $ = selector => document.querySelector(selector);
+            $("audio").volume = 0.05;
+            $("audio").play();
+        });
+    </script> 
+</body>
+</html>
