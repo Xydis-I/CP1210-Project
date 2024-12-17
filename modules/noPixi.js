@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             nextQuestion();
             if (currentLevel >= 6) {
-                location.href = "../Screens/gameWinPage.html";
+                location.href = "../Screens/gameOutcome.html";
             }
             levelInterval = setInterval(levelTimer, 1000);
             $("#hp").className = "hp2";

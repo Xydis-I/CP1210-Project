@@ -25,7 +25,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   const questions = questionFile;
 
   // add a test list of question objects and had the text object connected to the current level
-  // possbly change to a ramdom question from the list after
   let questionNumber = Math.floor(Math.random() * questions.length);
   console.log(questionNumber);
 
@@ -100,8 +99,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   scroll.addChild(question);
   question.x = 0;
   question.y = 0;
-  // changed for list testing
-  // question.text = "What is the name of the latest Nintendo system?";
   question.text = questions[questionNumber].question;
 
   await PIXI.Assets.load("../sprites/UI/Spellbook.png");
@@ -129,8 +126,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   spellbook.addChild(answer1);
   answer1.x = -290;
   answer1.y = -80;
-  // Changed for list testing
-  // answer1.text = "Playstation";
   answer1.text = questions[questionNumber].answer1;
   answer1.eventMode = "static";
   answer1.cursor = "pointer";
@@ -151,8 +146,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   spellbook.addChild(answer2);
   answer2.x = 290;
   answer2.y = -80;
-  // Changed for list testing
-  // answer2.text = "Switch";
   answer2.text = questions[questionNumber].answer2;
   answer2.eventMode = "static";
   answer2.cursor = "pointer";
@@ -173,8 +166,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   spellbook.addChild(answer3);
   answer3.x = -290;
   answer3.y = 20;
-  // Changed for list testing
-  // answer3.text = "Xbox";
   answer3.text = questions[questionNumber].answer3;
   answer3.eventMode = "static";
   answer3.cursor = "pointer";
@@ -195,8 +186,6 @@ import { questions as questionFile } from '../libraries/questions.js';
   spellbook.addChild(answer4);
   answer4.x = 290;
   answer4.y = 20;
-  // Changed for list testing
-  // answer4.text = "Wii";
   answer4.text = questions[questionNumber].answer4;
   answer4.eventMode = "static";
   answer4.cursor = "pointer";
@@ -407,15 +396,12 @@ import { questions as questionFile } from '../libraries/questions.js';
         answer4.eventMode = "passive";
 
         let lerpTracker = 0;
-        // let oldEnemyY = slimeDefaultLocation.y;
         const enemyTicker = new PIXI.Ticker();
         enemyTicker.add(async (ticker) => {
-            // slimeDefaultLocation.y = lerp( oldEnemyY, oldEnemyY + 350, lerpTracker / 60 );
             enemy.scale = lerp( 1, 0, lerpTracker / 60 );
             loadingscreen.alpha = lerp( 0, 1, lerpTracker / 60 );
             lerpTracker += ticker.deltaTime;
             if (lerpTracker / 60 > 1) {
-                // slimeDefaultLocation.y = oldEnemyY + 350;
                 enemyTicker.destroy();
                 currentLevel++;
                 changeEnemies(currentLevel);
@@ -426,7 +412,6 @@ import { questions as questionFile } from '../libraries/questions.js';
                     let lerpTracker = 0;
                     const levelTicker = new PIXI.Ticker();
                     levelTicker.add((ticker) => {
-                      // console.log(lerpTracker);
                       leveltracker.y = lerp(
                         levelTrackerLocations[`level${currentLevel - 1}`],
                         levelTrackerLocations[`level${currentLevel}`],
@@ -443,7 +428,7 @@ import { questions as questionFile } from '../libraries/questions.js';
 
                   console.log(`Current Level: ${currentLevel}`)
                   if (currentLevel == 6) {
-                    location.href = "../Screens/gameWinPage.html";
+                    location.href = "../Screens/gameOutcome.html";
                   }
 
                 // Added a re-loader to update the enemy on load.
@@ -463,7 +448,6 @@ import { questions as questionFile } from '../libraries/questions.js';
                 isLoading = false;
 
                 let loadinLerpTracker = 0;
-                // let oldEnemyY = slimeDefaultLocation.y;
                 const loadingTicker = new PIXI.Ticker();
                 loadingTicker.add((ticker) => {
                     loadingscreen.alpha = lerp( 1, 0, loadinLerpTracker / 60 );
